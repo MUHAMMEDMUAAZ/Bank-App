@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="..//../assets/image/pngtree-beautiful-bank-vector-glyph-icon-png-image_5146042.jpg" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        INDIAN BANK
+    </div>
+    <form [formGroup]="registerForm" class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input  formControlName="uname" type="text" name="userName" id="reg_name" placeholder="Username">
+        </div>
+
+        <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched" style="color:red ;">Invalid Data</div>
+
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input  formControlName="acno" type="text" name="acno" id="reg_acno" placeholder="Account number">
+        </div>
+
+        <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched" style="color:red ;">Invalid Data</div>
+
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input formControlName="pswd" type="password" name="password" id="reg_pswd" placeholder="Password">
+        </div>
+
+        <div *ngIf="this.registerForm.get('pswd')?.errors && this.registerForm.get('pswd')?.touched" style="color:red ;">Invalid Data</div>
+
+        <button class="btn mt-3" (click)="register()" type="button">Register</button>
+    </form>
+    <div class="text-center fs-6">
+        <a routerLink="">Sign in</a>
+    </div>
+</div>

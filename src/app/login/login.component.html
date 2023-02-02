@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="logo">
+        <img src="../../assets/image/pngtree-beautiful-bank-vector-glyph-icon-png-image_5146042.jpg" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+    INDIAN BANK
+    </div>
+    <h6>{{aim}}</h6>
+    <form [formGroup]="loginForm" class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input  formControlName="acno" type="text" name="userName" id="login_acno" [placeholder]="accounts">
+        </div>
+        <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" style="color:red ;">Invalid Data</div>
+
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input formControlName="pswd" type="password" name="password" id="login_pswd" placeholder="Password">
+        </div>
+
+        <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched" style="color:red ;">Invalid Data</div>
+
+        <button class="btn mt-3" type="button" (click)="login()">Login</button>
+    </form>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a> or <a routerLink="register">Sign up</a>
+    </div>
+</div>
